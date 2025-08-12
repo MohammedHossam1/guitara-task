@@ -13,7 +13,7 @@ const BrowseRange = () => {
         title="Browse Our Range"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
       />
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 mt-5 lg:mt-16 lg:px-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-5 lg:mt-16 lg:px-10">
         {BrowseRangeData.map((item, ind) => (
           <motion.div
             key={ind}
@@ -27,16 +27,16 @@ const BrowseRange = () => {
             }}
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="rounded-xl overflow-hidden">
+            <div className="lg:rounded-xl overflow-hidden">
               <ImageFallBack
                 src={item.imageSrc}
                 alt={item.title}
                 width={2200}
                 height={2200}
-                className="object-cover w-full rounded-xl group-hover:scale-105 transition-all duration-300 lg:h-[30rem] 2xl:h-[34rem]"
+                className="object-cover w-full lg:rounded-xl group-hover:scale-105 transition-all duration-300 h-[15rem] lg:h-[30rem] 2xl:h-[34rem]"
               />
             </div>
-            <h3 className="text-2xl font-semibold mt-4 text-text-color text-center">
+            <h3 className="text-base lg:text-2xl font-semibold mt-4 text-text-color text-center">
               {item.title}
             </h3>
           </motion.div>

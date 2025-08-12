@@ -1,5 +1,4 @@
 
-// components/Footer.tsx
 export default function Footer() {
   return (
     <footer className="border-t-2 custom-container  py-10 ">
@@ -13,7 +12,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Links */}
+        {/* links */}
         <div className=" col-span-6 md:col-span-2"> 
           <h3 className=" text-[#9F9F9F] font-medium mb-10">Links</h3>
           <ul className="space-y-10 text-sm " >
@@ -24,7 +23,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Help */}
+        {/* help */}
         <div className=" col-span-6 md:col-span-2">
           <h3 className=" text-[#9F9F9F] font-medium mb-10">Help</h3>
           <ul className="space-y-10 text-sm">
@@ -34,19 +33,19 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Newsletter */}
+        {/* news  */}
         <div className=" col-span-12 md:col-span-3">
           <h3 className=" text-[#9F9F9F] font-medium mb-10">Newsletter</h3>
-          <form className="flex  gap-2">
+          <form className="flex max-lg:flex-col gap-2">
             <input
               type="email"
               required
               placeholder="Enter Your Email Address"
-              className="border-b border-gray-400 outline-none lg:flex-1 py-1 text-sm"
+              className="border-b border-gray-400 outline-none flex-1 py-1 text-sm"
             />
             <button
               type="submit"
-              className="text-sm font-bold border-b border-black hover:text-main transition"
+              className="text-sm font-bold border-b w-fit border-black hover:text-main transition"
             >
               SUBSCRIBE
             </button>
@@ -54,7 +53,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* bottom footer */}
       <div className=" mt-10 border-t border-gray-300 pt-4 text-sm lg:text-base text-black">
         © 2023 funiro. All rights reserved
       </div>
