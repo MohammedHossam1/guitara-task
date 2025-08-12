@@ -40,27 +40,27 @@ export default function ProductList() {
             <div className="flex flex-wrap items-center justify-between gap-4 custom-container bg-main-light py-4">
                 <div className="flex items-center gap-1 lg:gap-4">
                     <button className="flex items-center gap-2 font-medium max-lg:text-xs">
-                        <SlidersHorizontal className="size-3 lg:size-6" />{" "}
+                        <SlidersHorizontal className="size-5 lg:size-6" />{" "}
                         <span className="max-lg:hidden">Filter</span>
                     </button>
                     <button
                         className={cn("p-1 rounded-sm", !isHorizontal && "bg-gray-100")}
                         onClick={() => setIsHorizontal(false)}
                     >
-                        <Image src="/2grid.svg" alt="sort" width={20} height={20} className="size-3 lg:size-6" />
+                        <Image src="/2grid.svg" alt="sort" width={20} height={20} className="size-5 lg:size-6" />
                     </button>
                     <button
                         className={cn("p-1 rounded-sm", isHorizontal && "bg-gray-100")}
                         onClick={() => setIsHorizontal(true)}
                     >
-                        <Image src="/1grid.svg" alt="sort" width={20} height={20} className="size-3 lg:size-6" />
+                        <Image src="/1grid.svg" alt="sort" width={20} height={20} className="size-5 lg:size-6" />
                     </button>
-                    <span className="ml-4 text-xs lg:text-base font-normal text-black">
+                    <span className="ml-4 text-sm lg:text-base font-normal text-black">
                         Showing {startIndex + 1}–{Math.min(endIndex, filteredProducts.length)} of {filteredProducts.length} results
                     </span>
                 </div>
 
-                <div className="flex items-center gap-2 lg:gap-4 max-lg:text-xs">
+                <div className="flex items-center gap-2 lg:gap-4 max-lg:text-sm">
                     <div className="flex items-center gap-2">
                         <span>Show</span>
                         <input

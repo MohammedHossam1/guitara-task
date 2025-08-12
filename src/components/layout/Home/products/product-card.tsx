@@ -24,14 +24,19 @@ export function ProductCard({
     return (
         <div className={`group relative w-full h-full overflow-hidden flex flex-col ${isColumn && "flex-row items-center "} bg-[#F4F5F7]  transition`}>
             {/* Product Image */}
-            <div className="relative">
-                <ImageFallBack
-                    src={image}
-                    alt={title}
-                    width={400}
-                    height={400}
-                    className="w-full h-[12rem] md:h-[20rem] object-cover"
-                />
+            <div className={`relative ${isColumn && "w-[40%]"} `}>
+                <div
+                className={`w-full h-[12rem] md:h-[20rem] object-cover overflow-hidden ${isColumn && ""}`}
+                >
+
+                    <ImageFallBack
+                        src={image}
+                        alt={title}
+                        width={400}
+                        height={400}
+                        className={`w-full h-full object-cover `}
+                    />
+                </div>
 
                 {/* Label */}
                 {label && (
@@ -44,7 +49,7 @@ export function ProductCard({
                 )}
             </div>
             {/* Product Info */}
-            <div className={`p-4  h-full flex flex-col justify-between ${isColumn && "justify-center"}`}>
+            <div className={`p-4   h-full flex flex-col justify-between ${isColumn && "justify-center w-[60%]"}`}>
                 <div className="">
                     <h3 className="text-lg md:text-2xl line-clamp-1 text-[#3A3A3A] font-semibold">{title}</h3>
                     <p className="text-[#898989] text-sm md:text-base font-medium line-clamp-3">{description}</p>
