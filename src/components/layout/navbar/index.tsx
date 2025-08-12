@@ -11,7 +11,7 @@ export default function Navbar() {
   const t = useTranslations("navbar");
 
   return (
-    <nav className="border-b bg-background/95">
+    <nav className="border-b bg-background/95 relative z-50">
       <div className="custom-container mx-auto flex h-16 items-center justify-between gap-4  gap-x-6">
         <Logo />
         {/* Desktop Links */}

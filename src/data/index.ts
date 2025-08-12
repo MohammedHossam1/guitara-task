@@ -36,7 +36,7 @@ export const ProductsData: IProduct[] = [
     description: "Cold espresso with fresh milk and ice.",
     price: 3.99,
     label: "sale",
-    category: "Drinks",
+    category: "Chairs",
     oldPrice: 4.99,
     image: "/home/products/1.png",
     inStock: true
@@ -46,7 +46,7 @@ export const ProductsData: IProduct[] = [
     title: "Cappuccino",
     description: "Hot espresso with steamed milk foam.",
     price: 4.49,
-    category: "Drinks",
+    category: "Chairs",
     image: "/home/products/2.png",
     inStock: true
   },
@@ -55,7 +55,7 @@ export const ProductsData: IProduct[] = [
     title: "Chocolate Cake",
     description: "Rich chocolate sponge cake with cream.",
     price: 5.99,
-    category: "Desserts",
+    category: "Sofas",
     image: "/home/products/3.png",
     inStock: false
   },
@@ -65,7 +65,7 @@ export const ProductsData: IProduct[] = [
     description: "Creamy cheesecake with strawberry topping.",
     price: 6.49,
     label: "new",
-    category: "Desserts",
+    category: "Sofas",
     image: "/home/products/4.png",
     inStock: true
   },
@@ -96,7 +96,7 @@ export const ProductsData: IProduct[] = [
     label: "sale",
     oldPrice: 4.99,
 
-    category: "Drinks",
+    category: "Chairs",
     image: "/home/products/7.png",
     inStock: true
   },
@@ -105,7 +105,7 @@ export const ProductsData: IProduct[] = [
     title: "Veggie Pizza",
     description: "Thin crust pizza with fresh vegetables.",
     price: 8.99,
-    category: "Main Course",
+    category: "Decor",
     image: "/home/products/8.png",
     inStock: true
   },
@@ -114,7 +114,7 @@ export const ProductsData: IProduct[] = [
     title: "Grilled Chicken",
     description: "Juicy grilled chicken breast with herbs.",
     price: 9.49,
-    category: "Main Course",
+    category: "Decor",
     image: "/home/products/9.png",
     inStock: false
   },
@@ -124,7 +124,7 @@ export const ProductsData: IProduct[] = [
     description: "Cold and creamy vanilla milkshake.",
     price: 4.29,
     label: "new",
-    category: "Drinks",
+    category: "Chairs",
     image: "/home/products/2.png",
     inStock: true
   },
@@ -134,7 +134,7 @@ export const ProductsData: IProduct[] = [
     description: "Cold espresso with fresh milk and ice.",
     price: 3.99,
     label: "sale",
-    category: "Drinks",
+    category: "Chairs",
     oldPrice: 4.99,
     image: "/home/products/1.png",
     inStock: true
@@ -144,7 +144,7 @@ export const ProductsData: IProduct[] = [
     title: "Cappuccino",
     description: "Hot espresso with steamed milk foam.",
     price: 4.49,
-    category: "Drinks",
+    category: "Sofas",
     image: "/home/products/2.png",
     inStock: true
   },
@@ -153,7 +153,7 @@ export const ProductsData: IProduct[] = [
     title: "Chocolate Cake",
     description: "Rich chocolate sponge cake with cream.",
     price: 5.99,
-    category: "Desserts",
+    category: "Sofas",
     image: "/home/products/3.png",
     inStock: false
   },
@@ -163,7 +163,7 @@ export const ProductsData: IProduct[] = [
     description: "Creamy cheesecake with strawberry topping.",
     price: 6.49,
     label: "new",
-    category: "Desserts",
+    category: "Sofas",
     image: "/home/products/4.png",
     inStock: true
   },
@@ -212,7 +212,7 @@ export const ProductsData: IProduct[] = [
     title: "Grilled Chicken",
     description: "Juicy grilled chicken breast with herbs.",
     price: 9.49,
-    category: "Main Course",
+    category: "Decor",
     image: "/home/products/9.png",
     inStock: false
   },

@@ -28,12 +28,11 @@ export function ProductCard({
                 <div
                 className={`w-full h-[12rem] md:h-[20rem] object-cover overflow-hidden ${isColumn && ""}`}
                 >
-
                     <ImageFallBack
                         src={image}
                         alt={title}
-                        width={400}
-                        height={400}
+                        width={1000}
+                        height={1000}
                         className={`w-full h-full object-cover `}
                     />
                 </div>
@@ -50,7 +49,7 @@ export function ProductCard({
             </div>
             {/* Product Info */}
             <div className={`p-4   h-full flex flex-col justify-between ${isColumn && "justify-center w-[60%]"}`}>
-                <div className="">
+                <div className="space-y-2">
                     <h3 className="text-lg md:text-2xl line-clamp-1 text-[#3A3A3A] font-semibold">{title}</h3>
                     <p className="text-[#898989] text-sm md:text-base font-medium line-clamp-3">{description}</p>
                 </div>

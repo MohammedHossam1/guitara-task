@@ -24,44 +24,53 @@ export default function ProductList() {
 
     const categories = ["All", "Chairs", "Sofas", "Decor"];
 
+    // filtered products with categories
     const filteredProducts =
         selectedCategory === "All"
             ? ProductsData
             : ProductsData.filter((p) => p.category === selectedCategory);
 
+    //  pagination
+
+    // calculate total pages by Divide filteredProducts length by showCount
     const totalPages = Math.ceil(filteredProducts.length / showCount);
+
+    // calculate startIndex and endIndex
     const startIndex = (currentPage - 1) * showCount;
     const endIndex = startIndex + showCount;
+
+    // sliced  products using startIndex and endIndex we counted
     const productsToShow = filteredProducts.slice(startIndex, endIndex);
 
     return (
         <div className="space-y-6">
             {/* Filter Bar */}
             <div className="flex flex-wrap items-center justify-between gap-4 custom-container bg-main-light py-4">
-                <div className="flex items-center gap-1 lg:gap-4">
-                    <button className="flex items-center gap-2 font-medium max-lg:text-xs">
+                <div className="flex items-center gap-3 lg:gap-7 ">
+                    <button className="flex items-center gap-2 font-medium text-xs lg:text-xl">
                         <SlidersHorizontal className="size-5 lg:size-6" />{" "}
-                        <span className="max-lg:hidden">Filter</span>
+                        <span className="max-lg:hidden ">Filter</span>
                     </button>
                     <button
-                        className={cn("p-1 rounded-sm", !isHorizontal && "bg-gray-100")}
+                        className={cn("p-1 rounded-sm", !isHorizontal && "border border-main")}
                         onClick={() => setIsHorizontal(false)}
                     >
                         <Image src="/2grid.svg" alt="sort" width={20} height={20} className="size-5 lg:size-6" />
                     </button>
                     <button
-                        className={cn("p-1 rounded-sm", isHorizontal && "bg-gray-100")}
+                        className={cn("p-1 rounded-sm", isHorizontal && "border border-main")}
                         onClick={() => setIsHorizontal(true)}
                     >
                         <Image src="/1grid.svg" alt="sort" width={20} height={20} className="size-5 lg:size-6" />
                     </button>
-                    <span className="ml-4 text-sm lg:text-base font-normal text-black">
+                    <div className="w-px h-7 bg-gray-700"></div>
+                    <span className=" text-sm lg:text-base font-normal text-black">
                         Showing {startIndex + 1}–{Math.min(endIndex, filteredProducts.length)} of {filteredProducts.length} results
                     </span>
                 </div>
 
-                <div className="flex items-center gap-2 lg:gap-4 max-lg:text-sm">
-                    <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 lg:gap-4 text-sm lg:text-xl">
+                    <div className="flex items-center gap-2 ">
                         <span>Show</span>
                         <input
                             type="number"
@@ -72,7 +81,7 @@ export default function ProductList() {
                                 setShowCount(val);
                                 setCurrentPage(1);
                             }}
-                            className="w-10 lg:w-14 bg-white px-2 py-1"
+                            className="w-14 bg-white px-2 py-1"
                         />
                     </div>
                     <div className="flex items-center gap-2">
@@ -100,8 +109,6 @@ export default function ProductList() {
             </div>
 
             {/* Products Grid */}
-
-
             <div
                 className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 custom-container ${isHorizontal && 'sm:!grid-cols-1 lg:!grid-cols-2'
                     }`}
@@ -113,7 +120,7 @@ export default function ProductList() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{
                             duration: 0.5,
-                            delay: index * 0.15, // كل عنصر يتأخر شوي
+                            delay: index * 0.15,
                             ease: 'easeOut',
                         }}
                         viewport={{ once: true, amount: 0.2 }}
@@ -122,7 +129,6 @@ export default function ProductList() {
                     </motion.div>
                 ))}
             </div>
-
 
             {/* Pagination */}
             <div className="custom-container flex justify-center">

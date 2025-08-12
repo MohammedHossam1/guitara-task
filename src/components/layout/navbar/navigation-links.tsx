@@ -17,7 +17,7 @@ export function NavigationLinks({ t, setIsOpen, flexDir = "row" }: IProps) {
 
   return (
     <div
-      className={`relative flex items-center gap-4 lg:gap-10 2xl:gap-20  ${
+      className={`relative flex items-center gap-4  lg:gap-10 2xl:gap-20  ${
         flexDir == "col" && "flex-col justify-center"
       }`}
     >

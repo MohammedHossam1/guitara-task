@@ -22,7 +22,7 @@ const BrowseRange = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{
               duration: 0.5,
-              delay: ind * 0.2, // التأخير حسب الترتيب
+              delay: ind * 0.2, 
               ease: 'easeOut',
             }}
             viewport={{ once: true, amount: 0.2 }}

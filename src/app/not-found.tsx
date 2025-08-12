@@ -35,7 +35,7 @@ const NotFound: React.FC = () => {
         </h1>
         <p className="text-lg text-gray-600 mb-8">{t("notFoundDesc")} </p>
 
-        {/* Navigation Options */}
+        {/* navigation options */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/"

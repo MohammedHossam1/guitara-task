@@ -4,22 +4,22 @@ import React from 'react'
 const BottomSection = () => {
     const data = [
         {
-            image: "/cart/troph.svg",
+            image: "/shop/troph.svg",
             title: "High Quality",
             desc: "crafted from top materials"
         },
         {
-            image: "/cart/check.svg",
+            image: "/shop/check.svg",
             title: "Warranty Protection",
             desc: "Over 2 years"
         },
         {
-            image: "/cart/shipping.svg",
+            image: "/shop/shipping.svg",
             title: "Free Shipping",
             desc: "Order over 150 $"
         },
         {
-            image: "/cart/customer-support.svg",
+            image: "/shop/customer-support.svg",
             title: "24 / 7 Support",
             desc: "Dedicated support"
         },
