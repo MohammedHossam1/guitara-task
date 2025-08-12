@@ -9,7 +9,7 @@ const Hero = () => {
         animate={{ opacity: 1 }}
         viewport={{ once: true }}
         
-        className="flex relative justify-center items-center h-[calc(100vh-4rem)] w-full  ">
+        className="flex relative justify-center items-center h-[calc(100dvh-4rem)] w-full  ">
             <ImageFallBack src="/home/hero.png" alt="Logo" width={2000} height={2000} className="w-full h-full" />
             <div className="absolute bottom-1/2  md:w-5/8 xl:w-3/8  max-md:translate-y-1/2  end-5 md:bottom-20  max-md:start-5 md:end-20 rounded-xl bg-secondary">
                 <div className=" p-7 lg:p-10   lg:py-15 w-full space-y-7">

@@ -1,8 +1,9 @@
+import NewsLetter from "./news-letter";
 
 export default function Footer() {
   return (
     <footer className="border-t-2 custom-container  py-10 ">
-      <div className=" px-4 grid grid-cols-12 gap-8  text-gray-700 ">
+      <div className="  grid grid-cols-12 gap-8  text-gray-700 ">
         {/* Brand */}
         <div className=" col-span-12 md:col-span-4">
           <h2 className="font-bold text-xl  mb-2 lg:mb-10 lg:text-2xl ">Funiro.</h2>
@@ -13,9 +14,9 @@ export default function Footer() {
         </div>
 
         {/* links */}
-        <div className=" col-span-6 md:col-span-2"> 
-          <h3 className=" text-[#9F9F9F] font-medium mb-10">Links</h3>
-          <ul className="space-y-10 text-sm " >
+        <div className=" col-span-6 md:col-span-2">
+          <h3 className=" text-[#9F9F9F] font-medium mb-3  lg:mb-10">Links</h3>
+          <ul className="space-y-5 lg:space-y-10 text-sm " >
             <li><a href="#" className="hover:underline font-medium">Home</a></li>
             <li><a href="#" className="hover:underline font-medium">Shop</a></li>
             <li><a href="#" className="hover:underline font-medium">About</a></li>
@@ -25,31 +26,15 @@ export default function Footer() {
 
         {/* help */}
         <div className=" col-span-6 md:col-span-2">
-          <h3 className=" text-[#9F9F9F] font-medium mb-10">Help</h3>
-          <ul className="space-y-10 text-sm">
+          <h3 className=" text-[#9F9F9F] font-medium mb-3  lg:mb-10">Help</h3>
+          <ul className="space-y-5 lg:space-y-10 text-sm">
             <li><a href="#" className="hover:underline font-medium">Payment Options</a></li>
             <li><a href="#" className="hover:underline font-medium">Returns</a></li>
             <li><a href="#" className="hover:underline font-medium">Privacy Policies</a></li>
           </ul>
         </div>
-
-        {/* news  */}
-        <div className=" col-span-12 md:col-span-3">
-          <h3 className=" text-[#9F9F9F] font-medium mb-10">Newsletter</h3>
-          <form className="flex max-lg:flex-col gap-2">
-            <input
-              type="email"
-              required
-              placeholder="Enter Your Email Address"
-              className="border-b border-gray-400 outline-none flex-1 py-1 text-sm"
-            />
-            <button
-              type="submit"
-              className="text-sm font-bold border-b w-fit border-black hover:text-main transition"
-            >
-              SUBSCRIBE
-            </button>
-          </form>
+        <div className="col-span-12 md:col-span-3">
+          <NewsLetter />
         </div>
       </div>
 

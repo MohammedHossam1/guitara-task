@@ -19,7 +19,7 @@ const RoomsCarousel = () => {
                         <Button className=" p-5  lg:px-8 lg:py-6 text-base font-semibold ">Explore More</Button>
 
                     </div>
-                    <CustomCarousel arrows data={ProductsData} />
+                    <CustomCarousel  data={ProductsData} />
                 </div>
             </div>
         </motion.section>

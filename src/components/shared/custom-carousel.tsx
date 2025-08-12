@@ -21,7 +21,6 @@ interface IProp {
 
 export function CustomCarousel({
   dots = true,
-  arrows = false,
   data,
 }: IProp) {
   const [api, setApi] = useState<any>(null);
@@ -49,7 +48,7 @@ export function CustomCarousel({
         opts={{ align: "start" }}
         className="w-full"
         dir="ltr"
-        
+
         setApi={setApi}
       >
         <CarouselContent className="h-[20rem] lg:h-[35rem]  lg:gap-4">
@@ -82,27 +81,25 @@ export function CustomCarousel({
             </CarouselItem>))}
         </CarouselContent>
 
-        {arrows && (
-          <div
-            className={`flex items-center  gap-2 `}
-          >
-            <CarouselPrevious
-              className={` bg-white max-xl:opacity-50 focus:opacity-100 hover:opacity-100  shadow-2xl size-10 text-2xl  translate-x-[6rem]
+        <div
+          className={`flex items-center max-lg:hidden  gap-2 `}
+        >
+          <CarouselPrevious
+            className={` bg-white max-xl:opacity-50 focus:opacity-100 hover:opacity-100  shadow-2xl size-10 text-2xl  translate-x-[6rem]
                 ${selectedIndex == 0 ? "hidden" : ""} 
                 `}
-            />
-            <CarouselNext
-              className={` bg-white max-xl:opacity-50 focus:opacity-100 hover:opacity-100 shadow-2xl  -translate-x-[6rem]
+          />
+          <CarouselNext
+            className={` bg-white max-xl:opacity-50 focus:opacity-100 hover:opacity-100 shadow-2xl  -translate-x-[6rem]
                 ${selectedIndex == scrollSnaps.length - 1 ? "hidden" : ""} 
                 size-10 text-2xl   `}
-            />
-          </div>
-        )}
+          />
+        </div>
       </Carousel>
 
 
       {dots && (
-        <div className=" absolute  max-xl:end-10 xl:start-[30rem] bottom-10 flex justify-center gap-2 xl:mt-4 xl:gap-4" dir="ltr">
+        <div className={` absolute  max-xl:end-5 xl:start-[30rem] bottom-5 flex justify-center gap-2 xl:mt-4 xl:gap-4 ${selectedIndex == scrollSnaps.length - 1 ? "hidden" : ""}`} dir="ltr">
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
