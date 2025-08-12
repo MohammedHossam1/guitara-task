@@ -5,32 +5,8 @@ import { useTranslations } from "next-intl";
 import { Logo } from "./logo";
 import MobileNav from "./mobile-nav";
 import { NavigationLinks } from "./navigation-links";
-import { Heart, Search } from "lucide-react";
-import Link from "next/link";
-import ImageFallBack from "@/components/shared/image-fall-back";
+import AuthNavs from "./auth-navs";
 
-const navs = [
-  {
-    href: "/user",
-    label: "user",
-    iconSrc: "/home/user.svg"
-  },
-  {
-    href: "/search",
-    label: "search",
-    icon: <Search />
-  },
-  {
-    href: "/favorite",
-    label: "favorite",
-    icon: <Heart />
-  },
-  {
-    href: "/cart",
-    label: "cart",
-    iconSrc: "/home/cart.svg"
-  }
-]
 export default function Navbar() {
   const t = useTranslations("navbar");
 
@@ -42,17 +18,8 @@ export default function Navbar() {
         <div className="max-md:hidden">
           <NavigationLinks t={t} />
         </div>
-        <div className="hidden md:flex items-center gap-10 ">
-          {navs.map((nav, ind) => (
-            <Link
-              key={ind}
-              href={nav.href}
-              title={nav.label}
-              className=""
-            >
-              {nav.icon || <ImageFallBack src={nav?.iconSrc} alt={nav?.label || "icon"} width={20} height={20} />}
-            </Link>
-          ))}
+        <div className="max-md:hidden">
+          <AuthNavs />
         </div>
         {/* Mobile Nav  */}
         <MobileNav t={t} user={user} />

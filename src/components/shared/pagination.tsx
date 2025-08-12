@@ -1,104 +1,77 @@
 "use client";
+import React from "react";
+import { cn } from "@/lib/utils";
 
-import { useRouter, useSearchParams } from "next/navigation";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  onPageChange: (page: number) => void;
+}
 
-export default function PaginationContainer({ total }: { total: number }) {
-  const search = useSearchParams();
-  const router = useRouter();
-  const setSearchParam = (key: string, value: string) => {
-    const params = new URLSearchParams(search.toString());
-    params.set(key, value);
-    router.push(`?${params.toString()}`, { scroll: true });
+export default function PaginationContainer({
+  currentPage,
+  totalPages,
+  onPageChange,
+}: PaginationProps) {
+  if (totalPages <= 1) return null;
+
+  const renderPages = () => {
+    let pages: (number | string)[] = [];
+
+    if (currentPage <= 2) {
+      pages = [1, 2];
+    } else {
+      pages = [1, 2, "...", currentPage];
+    }
+
+    return pages;
   };
-  const page = parseInt(search.get("page") || "1");
-  if (total <= 1) return null;
 
   return (
-    <Pagination className="my-5" dir="ltr">
-      <PaginationContent>
-        <PaginationItem>
-          <PaginationPrevious
-            className="text-main"
-            onClick={() => {
-              if (page != 1)
-                setSearchParam("page", Math.max(1, page - 1).toString());
-            }}
-          />
-        </PaginationItem>
-        {page != 1 && page - 1 != 1 && (
-          <PaginationItem
-            className="custom-pagination"
-            onClick={() => {
-              setSearchParam("page", "1");
-            }}
-          >
-            <span className="custom-span">1</span>
-          </PaginationItem>
+    <div className="flex items-center gap-2 lg:gap-5">
+      {/* Previous */}
+      <button
+        className={cn(
+          "px-3 py-1 rounded bg-main-light hover:bg-main cursor-pointer h-8 lg:h-12",
+          currentPage === 1 && " hidden"
         )}
-        {page > 3 && (
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
-        )}
+        disabled={currentPage === 1}
+        onClick={() => onPageChange(currentPage - 1)}
+      >
+        Prev
+      </button>
 
-        {page - 1 > 0 && (
-          <PaginationItem
-            onClick={() => {
-              setSearchParam("page", (page - 1).toString());
-            }}
-            className="custom-pagination"
+      {/* Pages */}
+      {renderPages().map((page, idx) =>
+        page === "..." ? (
+          <span key={idx} className="px-2">
+            ...
+          </span>
+        ) : (
+          <button
+            key={page}
+            onClick={() => onPageChange(page as number)}
+            className={cn(
+              "px-3 py-1 bg-main-light hover:bg-main cursor-pointer size-8 lg:size-12 rounded",
+              page === currentPage && "bg-main text-white border-black"
+            )}
           >
-            <span className="custom-span">{page - 1}</span>
-          </PaginationItem>
-        )}
-        <PaginationItem className="custom-pagination !border-main !font-semibold">
-          <span className="custom-span">{page}</span>
-        </PaginationItem>
-        {page + 1 <= total && (
-          <PaginationItem
-            className="custom-pagination"
-            onClick={() => {
-              setSearchParam("page", (page + 1).toString());
-            }}
-          >
-            <span className="custom-span">{page + 1}</span>
-          </PaginationItem>
-        )}
+            {page}
+          </button>
+        )
+      )}
 
-        {page < total - 3 && (
-          <PaginationItem>
-            <PaginationEllipsis />
-          </PaginationItem>
+      {/* Next */}
+      <button
+        className={cn(
+          "px-3 py-1 h-8 lg:h-12 hover:bg-main cursor-pointer bg-main-light rounded",
+          currentPage === totalPages && "hidden"
         )}
-        {page != total && page + 1 != total && (
-          <PaginationItem
-            className="custom-pagination"
-            onClick={() => {
-              setSearchParam("page", total.toString());
-            }}
-          >
-            <span className="custom-span">{total}</span>
-          </PaginationItem>
-        )}
-
-        <PaginationItem>
-          <PaginationNext
-            className="text-main"
-            onClick={() => {
-              if (page != total)
-                setSearchParam("page", Math.min(total, page + 1).toString());
-            }}
-          />
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
+        disabled={currentPage === totalPages}
+        onClick={() => onPageChange(currentPage + 1)}
+      >
+        Next
+      </button>
+    </div>
   );
 }

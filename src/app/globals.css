@@ -46,6 +46,7 @@
 /* genral config */
 @theme {
   --color-main: #B88E2F;
+  --color-main-light: #F9F1E7;
   --color-secondary: #FFF3E3;
   --color-text-color: #333333;
   --color-darkMain: #000;
@@ -168,11 +169,12 @@
   @variant 2xl {
     padding-inline: 6rem;
     max-width: var(--breakpoint-3xl);
+    margin-inline: auto;
   }
 }
 
 .flex-basis-responsive {
-  flex-basis: 1;
+  flex-basis: 340;
   flex-grow: 1;
   flex-shrink: 1;
 }
